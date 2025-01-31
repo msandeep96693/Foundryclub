@@ -10,9 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 					
 					
-public class PageLogin {                              // extends Elementutils 
-					
-//	WebDriver driver;				
+public class PageLogin {                              // extends Elementutils 				
 					
 	private WebDriver driver;
 
@@ -23,16 +21,17 @@ public class PageLogin {                              // extends Elementutils
 	}	
 				
 	@FindBy(xpath = "//input[@id='email'] ") private WebElement emailaddress;
-	@FindBy(xpath = "mat-label[.='Email address'] ") private WebElement emailvalidation;
+	@FindBy(xpath = "//mat-label[.='Email address'] ") private WebElement emailvalidation;
 	@FindBy(xpath = "//input[@id='password']") private WebElement password;
 	@FindBy(xpath = "// mat-label[.='Password'] ") private WebElement passwordvalidation;
 	@FindBy(xpath = "//label[.=' Remember me ']") private WebElement remembermecheckbox;
-	@FindBy(xpath = "label[.=' Remember me '] ") private WebElement remembermevalidation;
+	@FindBy(xpath = "//label[.=' Remember me '] ") private WebElement remembermevalidation;
 	@FindBy(xpath = "//span[.=' Sign in ']/span") private WebElement signinbutton;
 	@FindBy(xpath = "//span[.=' Sign in ']/span") private WebElement signinbuttonvalidation;
 	
 	@FindBy(xpath = "(//div[.='Hello, Admin'])[2]") private WebElement dashboardvalidation;
 	@FindBy(xpath = "//div[contains(text(),'Welcome')]") private WebElement navigatevalidation;
+	@FindBy(xpath = "(//div[.='Hello, Admin'])[1]") private WebElement helloadmintextvalidation;
 
 	
 	// ERROR MESSAGES 
@@ -95,14 +94,24 @@ public class PageLogin {                              // extends Elementutils
 	}
 	
 	public void navigatevalidationdashboard() {
-		String welcometext = "Welcome! You have successfully logged into your account.";
 		String welcomevalidation = navigatevalidation.getText();
-		if(welcometext.equals(welcomevalidation)) {
+		String welcometext = "Welcome! You have successfully logged into your account.";
+		if(welcomevalidation.equals(welcometext)) {
 			System.out.println("Welcome! You have successfully logged into your account.");
 		} else {
 			System.out.println("WELCOME TO FOUNDRY CLUB");
 		}
 		System.out.println(dashboardvalidation.getText());
+	}
+	
+	public void dashboardtextvalidation() {
+		String text = "Hello, Admin";
+		String admintext = helloadmintextvalidation.getText();
+		if(admintext.equals(text)) {
+			System.out.println("Dashboard Verified");
+		} else {
+			System.out.println("Dashboard not verified");
+		}
 	}
 	
 	

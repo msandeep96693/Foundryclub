@@ -12,7 +12,7 @@ Then user validate the dashboard
 When user click on incentives from left navigation
 And user click on incentive+ button
 And user validate the label name and select mini club name option
-And user validate the label name and enter the title name as " Automation Incentives "
+And user validate the label name and enter the title name as " Automation Incentives"
 And user validate the label name and select the start date from calender
 And user validate the label name and select the end date from calender
 And user validate the label name and Add an image 

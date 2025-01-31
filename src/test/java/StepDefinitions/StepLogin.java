@@ -31,21 +31,25 @@ public class StepLogin {
 	
 	@When("user enter the valid email address {string}")
 	public void user_enter_the_valid_email_address(String mail) {
-	   login.Emailfield(mail);
+		login.validateemailaddresslabel();
+	    login.Emailfield(mail);
 	}
 	
 	@When("user enter the valid password {string}")
 	public void user_enter_the_valid_password(String pass) {
-	   login.Passwordfield(pass);
+		login.validatepasswordlabel();
+	    login.Passwordfield(pass);
 	}
 	
 	@When("user click on remember me check box")
 	public void user_click_on_remember_me_check_box() {
+	   login.validateremembermelabel();
 	   login.rememberme();
 	}
 	
 	@When("user click on sign in button")
 	public void user_click_on_sign_in_button() {
+	  login.validatesigninbuttonlabel();
 	  login.SigninButton();
 	}
 	
@@ -57,7 +61,8 @@ public class StepLogin {
 	
 	@Then("user validate the dashboard")
 	public void user_validate_the_dashboard() {
-		System.out.println("SUCCESSFUL");
+//		System.out.println("SUCCESSFUL");
+		login.dashboardtextvalidation();
 	}
 	
 

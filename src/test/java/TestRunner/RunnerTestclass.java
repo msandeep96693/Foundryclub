@@ -7,10 +7,10 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/Loginflow/login.feature",
+@CucumberOptions(features = "src/test/resources/Incentives/Createincentive.feature",
 		         glue = { "StepDefinitions","Hooks"},
 				 plugin = {"pretty","html:target/Cucumber Report/Cucumber.html" },
-				 dryRun = false,
+				 dryRun = true,
 				 monochrome = true
 //				 "src/test/resources/Adminportal/1loginresources",
 			     
@@ -20,3 +20,4 @@ import io.cucumber.junit.CucumberOptions;
 public class RunnerTestclass {
 
 }
+//"src/test/resources/Loginflow/login.feature",
